@@ -1,0 +1,13 @@
+  backend:
+    build: ./backend
+    container_name: backend_api
+    restart: always
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mysql
+    environment:
+      DB_HOST: mysql
+      DB_USER: root
+      DB_PASSWORD: rootpass
+      DB_NAME: incident_trackerdb
